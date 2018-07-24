@@ -10,7 +10,7 @@ const App = styled.span`${skin.App}`;
 export default () => 
   <App>
     <Switch>
-      <Route exact path='/list' component={List}/> 
+      <Route  path='/list' component={List}/> 
       <Route exact patch='/' component={Home}/>
     </Switch>
   </App>

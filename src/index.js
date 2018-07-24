@@ -1,31 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider, injectGlobal } from 'styled-components';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom'
+import { injectGlobal } from 'styled-components';
 import App from './pages/App';
-import { getStore, init as storeInit, registerReducer } from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
 import theme from './theme';
+import Root from './Root';
 
 injectGlobal`${theme.global()}`;
 
-const getInitiatedStore = () => {
-    storeInit();
-    registerReducer();
-    return getStore();
-  };
-
-const store = getInitiatedStore();
-  
-const getApp = () =>
-  (<ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  </ThemeProvider>
+const getApp = () => (
+    <Root>
+      <App/>
+    </Root>
   );
 
 ReactDOM.render(getApp(), document.getElementById('root'));

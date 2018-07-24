@@ -7,7 +7,7 @@ import { resetCounter } from '../../actions/index';
 import * as skin from './skin';
 
 const Count = styled.span`${skin.Count}`;
-const renderHistory = history => <Count>{history}</Count>;
+const renderHistory = (history, i) => <Count key={i}>{history}</Count>;
 const BackButton = styled(Link)`${skin.BackButton}`;
 
 const List = ({ history, resetCounter }) => {
@@ -23,9 +23,8 @@ const List = ({ history, resetCounter }) => {
 }
 
 List.propTypes = {
-  history: PropTypes.array,
-  resetCounter: PropTypes.func,
-  testing: PropTypes.number.isRequired
+  history: PropTypes.array.isRequired,
+  resetCounter: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => {

@@ -37,6 +37,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
+  // console.log('wtf ', state)
   const { count } = state.counter
   const { isMaximumCountReach, isMinimumCountReach} = state.errors;
   return {
@@ -51,11 +52,10 @@ const mapDispatchToProps =  {
     decreaseCounter
 }
 Home.propTypes = {
-  count: PropTypes.number,
-  qqq: PropTypes.number.isRequired,
-  isMinimumCountReach: PropTypes.bool,
-  isMaximumCountReach: PropTypes.bool,
-  incrementCounter: PropTypes.func,
-  decreaseCounter: PropTypes.func,
+  count: PropTypes.number.isRequired,
+  isMinimumCountReach: PropTypes.bool.isRequired,
+  isMaximumCountReach: PropTypes.bool.isRequired,
+  incrementCounter: PropTypes.func.isRequired,
+  decreaseCounter: PropTypes.func.isRequired,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
