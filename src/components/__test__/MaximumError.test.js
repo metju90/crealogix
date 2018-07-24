@@ -1,10 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import MaximumError from '../MaximumError';
-import { ThemeProvider } from 'styled-components';
-import theme from  '../../theme'; 
+import Root from '../../Root';
 
 it('it should contain correct text', () => {
-    const wrapper = shallow(<ThemeProvider theme={theme}><MaximumError /></ThemeProvider>)
-    expect(wrapper.find('MaximumError').dive().children().text()).toEqual('You reach the highest number');
+    const wrapper = mount(
+                <Root>
+                    <MaximumError />
+                </Root>)
+    expect(wrapper.find('MaximumError').children().text()).toEqual('You reach the highest number');
 })
