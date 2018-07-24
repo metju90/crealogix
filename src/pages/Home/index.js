@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import logo from '../../logo.svg';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { incrementCounter, decreaseCounter } from '../../actions';
@@ -10,7 +10,7 @@ import MinusButton from 'components/MinusButton'
 import PlusButton from 'components/PlusButton'
 import * as skin from './skin';
 
-class App extends Component {
+class Home extends Component {
   
   handleOnIncrement = () => this.props.incrementCounter();
   handleOnDecrease = () => this.props.decreaseCounter();
@@ -18,12 +18,12 @@ class App extends Component {
   render() {
     const Counter = styled.span`${skin.Counter}`;
     const CounterWrapper = styled.span`${skin.CounterWrapper}`;
-    const BackButton = styled(Link)`${skin.BackButton}`;
+    const ListButton = styled(Link)`${skin.ListButton}`;
     const { count, isMaximumCountReach, isMinimumCountReach } = this.props;
 
     return (
         <Fragment>
-          <BackButton to='/list'> See the history </BackButton>
+          <ListButton to='/list'> See the history </ListButton>
           <CounterWrapper>
             <PlusButton onClickHandler={this.handleOnIncrement} />
             <Counter> {count} </Counter>
@@ -50,5 +50,12 @@ const mapDispatchToProps =  {
     incrementCounter,
     decreaseCounter
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+Home.propTypes = {
+  count: PropTypes.number,
+  qqq: PropTypes.number.isRequired,
+  isMinimumCountReach: PropTypes.bool,
+  isMaximumCountReach: PropTypes.bool,
+  incrementCounter: PropTypes.func,
+  decreaseCounter: PropTypes.func,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

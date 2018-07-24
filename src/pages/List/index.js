@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import logo from '../../logo.svg';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { resetCounter } from '../../actions/index';
 import * as skin from './skin';
 
@@ -20,6 +20,12 @@ const List = ({ history, resetCounter }) => {
            }
       </Fragment>
     );
+}
+
+List.propTypes = {
+  history: PropTypes.array,
+  resetCounter: PropTypes.func,
+  testing: PropTypes.number.isRequired
 }
 
 const mapStateToProps = state => {

@@ -5,12 +5,12 @@ export const Counter = () => css`
 	font-weight: bold;
 `
 export const CounterWrapper = () => css`
-	width: 200px;
+	width: 280px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 `;
 
-export const BackButton = ({theme}) => css`
+export const ListButton = ({theme}) => css`
 	${theme.elements.warning()}
 `;

@@ -12,7 +12,7 @@ injectGlobal`${theme.global()}`;
 
 const getInitiatedStore = () => {
     storeInit();
-    registerReducer;
+    registerReducer();
     return getStore();
   };
 
