@@ -7,7 +7,6 @@ import App from './pages/App';
 import { getStore, init as storeInit, registerReducer } from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
 import theme from './theme';
-import { createStore } from 'redux';
 
 injectGlobal`${theme.global()}`;
 
