@@ -4,7 +4,6 @@ export default () => css`
     html {
         
         background-color: #17161c;
-        height: 100%;
     }
     body {
         background: inherit;

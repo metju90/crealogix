@@ -5,7 +5,6 @@ const initialState = {
     isMinimumCountReach: false
 }
 export default function(state = initialState, action) {
-    console.log('aaaa ', action);
     switch(action.type) {
         case MINIMUM:
             return {

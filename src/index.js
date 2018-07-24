@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, injectGlobal } from 'styled-components';
 import { Provider } from 'react-redux';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom'
+import App from './pages/App/index';
 import { getStore, init as storeInit, registerReducer } from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
 import bootstrapCSS from './theme/bootstrap.min.css';
 import theme from './theme';
 import { createStore } from 'redux';
+
+injectGlobal`${theme.global()}`;
 
 const getInitiatedStore = () => {
     storeInit();
@@ -20,7 +23,9 @@ const store = getInitiatedStore();
 const getApp = () =>
   (<ThemeProvider theme={theme}>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </ThemeProvider>
   );

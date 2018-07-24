@@ -1,4 +1,4 @@
-import { INCREMENT, HISTORY, MAXIMUM, MINIMUM } from '../constants';
+import { INCREMENT, ADD_HISTORY, MAXIMUM, MINIMUM } from '../constants';
 
 const x = () => (dispatch, getState) => {
     let  { current, history } = getState().counter
@@ -15,7 +15,7 @@ const x = () => (dispatch, getState) => {
     }
 
     history.push(current)
-    dispatch({ type: HISTORY, payload: history });
+    dispatch({ type: ADD_HISTORY, payload: history });
 
     current++;
     dispatch({ type: INCREMENT, payload: current});
