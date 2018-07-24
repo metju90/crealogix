@@ -1,7 +1,7 @@
 import { INCREMENT, DECREASE, ADD_HISTORY, RESET_STATE  } from '../../constants'
 
 const initialState = {
-    current: 0,
+    count: 0,
     history: []
 }
 export default function(state = initialState, action) {
@@ -9,12 +9,12 @@ export default function(state = initialState, action) {
         case INCREMENT:
             return {
                 ...state,
-                current: action.payload
+                count: action.payload
             }
         case DECREASE:
             return {
                 ...state,
-                current: action.payload
+                count: action.payload
             }
         case ADD_HISTORY:
             return {
@@ -23,7 +23,7 @@ export default function(state = initialState, action) {
             } 
         case RESET_STATE:
             return {
-                current: 0,
+                count: 0,
                 history: []
             }
         default:

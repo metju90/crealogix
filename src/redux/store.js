@@ -7,7 +7,6 @@ import reducers from './reducers';
 let store;
 
 const init = () => {
-  console.log('aaa!! ', reducers);
   const params = [combineReducers(reducers)];
   const enhancers = [applyMiddleware(thunk)];
   if (process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION__) { // eslint-disable-line no-underscore-dangle

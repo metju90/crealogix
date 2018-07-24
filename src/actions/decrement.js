@@ -1,22 +1,22 @@
 import { DECREASE, ADD_HISTORY, MAXIMUM, MINIMUM  } from '../constants';
 
-const x = () => (dispatch, getState) => {
-    let  { current, history } = getState().counter
+const decrement = () => (dispatch, getState) => {
+    let  { count, history } = getState().counter
     const { isMaximumCountReach } = getState().errors;
     // dispatch spinner if calls over 
     // the network required
-    if (current === 0) {
+    if (count === 0) {
         dispatch({ type: MINIMUM, payload: true })
         return;
     }
-    if (current === 10 && isMaximumCountReach)  {
+    if (count === 10 && isMaximumCountReach)  {
         dispatch({ type: MAXIMUM, payload: false })
     }
-    history.push(current)
+    history.push(count)
     dispatch({ type: ADD_HISTORY, payload: history });
-    current--;
-    dispatch({ type: DECREASE, payload: current });
+    count--;
+    dispatch({ type: DECREASE, payload: count });
 
 }
 
-export default x;
+export default decrement;

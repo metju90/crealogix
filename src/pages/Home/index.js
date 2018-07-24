@@ -19,14 +19,14 @@ class App extends Component {
     const Counter = styled.span`${skin.Counter}`;
     const CounterWrapper = styled.span`${skin.CounterWrapper}`;
     const BackButton = styled(Link)`${skin.BackButton}`;
-    const { current, isMaximumCountReach, isMinimumCountReach } = this.props;
+    const { count, isMaximumCountReach, isMinimumCountReach } = this.props;
 
     return (
         <Fragment>
           <BackButton to='/list'> See the history </BackButton>
           <CounterWrapper>
             <PlusButton onClickHandler={this.handleOnIncrement} />
-            <Counter> {current} </Counter>
+            <Counter> {count} </Counter>
             <MinusButton onClickHandler={this.handleOnDecrease} />
           </CounterWrapper>
           {isMaximumCountReach && <MaximumError />}
@@ -37,12 +37,10 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('x ', state)
-  const { current } = state.counter
+  const { count } = state.counter
   const { isMaximumCountReach, isMinimumCountReach} = state.errors;
-  console.log('x ', current)
   return {
-    current,
+    count,
     isMinimumCountReach, 
     isMaximumCountReach
   }

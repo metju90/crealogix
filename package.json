@@ -103,6 +103,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jsdom": "11.11.0",
-    "jsdom-global": "3.0.2"
+    "jsdom-global": "3.0.2",
+    "redux-mock-store": "^1.5.3"
   }
 }

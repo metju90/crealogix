@@ -1,7 +1,7 @@
 import { RESET_STATE } from '../constants';
 
-const x = () => (dispatch, ) => {
+const reset = () => (dispatch, ) => {
     dispatch({ type: RESET_STATE })
 }
 
-export default x;
+export default reset;
