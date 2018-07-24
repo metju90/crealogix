@@ -1,10 +1,6 @@
 import { css } from 'styled-components';
 
 export default () => css`
-    html {
-        
-        background-color: #17161c;
-    }
     body {
         background: inherit;
         margin: 0;

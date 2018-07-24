@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
-import App from './pages/App/index';
+import App from './pages/App';
 import { getStore, init as storeInit, registerReducer } from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
-import bootstrapCSS from './theme/bootstrap.min.css';
 import theme from './theme';
 import { createStore } from 'redux';
 

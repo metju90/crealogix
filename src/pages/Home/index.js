@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import logo from '../../logo.svg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { incrementCounter, decreaseCounter } from '../../actions/index';
-import MaximumError from '../../components/MaximumError'
-import MinimumError from '../../components/MinimumError/index'
-import MinusButton from '../../components/MinusButton/index'
-import PlusButton from '../../components/PlusButton/index'
+import { incrementCounter, decreaseCounter } from '../../actions';
+import MaximumError from 'components/MaximumError'
+import MinimumError from 'components/MinimumError'
+import MinusButton from 'components/MinusButton'
+import PlusButton from 'components/PlusButton'
 import * as skin from './skin';
 
 class App extends Component {
