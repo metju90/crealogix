@@ -8,5 +8,5 @@ it('it should contain correct text', () => {
                 <Root>
                     <MaximumError />
                 </Root>)
-    expect(wrapper.find('MaximumError').children().text()).toEqual('You reach the highest number');
+    expect(wrapper.find('MaximumError').children().text()).toEqual('You reached the highest number');
 })

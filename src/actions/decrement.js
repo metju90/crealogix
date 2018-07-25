@@ -1,10 +1,9 @@
 import { DECREASE, ADD_HISTORY, MAXIMUM, MINIMUM  } from '../constants';
 
 const decrement = () => (dispatch, getState) => {
-    let  { count, history } = getState().counter
-    const { isMaximumCountReach } = getState().errors;
-    // dispatch spinner if calls over 
-    // the network required
+    let  { count } = getState().counter
+    const { isMaximumCountReach, history } = getState().errors;
+
     if (count === 0) {
         dispatch({ type: MINIMUM, payload: true })
         return;
