@@ -37,7 +37,6 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log('wtf ', state)
   const { count } = state.counter
   const { isMaximumCountReach, isMinimumCountReach} = state.errors;
   return {
