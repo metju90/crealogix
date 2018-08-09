@@ -2,7 +2,8 @@ import { DECREASE, ADD_HISTORY, MAXIMUM, MINIMUM  } from '../constants';
 
 const decrement = () => (dispatch, getState) => {
     let  { count } = getState().counter
-    const { isMaximumCountReach, history } = getState().errors;
+    const { isMaximumCountReach  } = getState().errors;
+    const { history } = getState().counter;
 
     if (count === 0) {
         dispatch({ type: MINIMUM, payload: true })
